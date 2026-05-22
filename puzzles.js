@@ -153,47 +153,47 @@ const PUZZLES = [
 
   {
     id: 4,
-    title: "Hallowed Grounds",
-    level: "Pro",
+    title: "Field Marks",
+    level: "All-Pro",
     groups: [
       {
-        category: "MLB ballparks",
+        category: "Fenway Park",
         difficulty: 0,
         items: [
-          { type: "stadium", label: "Fenway Park" },
-          { type: "stadium", label: "Wrigley Field" },
-          { type: "stadium", label: "Dodger Stadium" },
-          { type: "stadium", label: "Camden Yards" }
+          { type: "stadium", label: "Green Monster" },
+          { type: "stadium", label: "Pesky Pole" },
+          { type: "saying",  label: "“Sweet Caroline”" },
+          { type: "team",    label: "Red Sox" }
         ]
       },
       {
-        category: "NFL stadiums",
+        category: "Lambeau Field",
         difficulty: 1,
         items: [
-          { type: "stadium", label: "Lambeau Field" },
-          { type: "stadium", label: "Soldier Field" },
-          { type: "stadium", label: "Arrowhead" },
-          { type: "stadium", label: "MetLife" }
+          { type: "stadium", label: "Frozen Tundra" },
+          { type: "saying",  label: "Lambeau Leap" },
+          { type: "other",   label: "Cheeseheads" },
+          { type: "team",    label: "Packers" }
         ]
       },
       {
-        category: "NHL barns",
+        category: "Augusta National",
         difficulty: 2,
         items: [
-          { type: "stadium", label: "Bell Centre" },
-          { type: "stadium", label: "Maple Leaf Gardens" },
-          { type: "stadium", label: "Joe Louis Arena" },
-          { type: "stadium", label: "Nassau Coliseum" }
+          { type: "stadium",    label: "Amen Corner" },
+          { type: "stadium",    label: "Magnolia Lane" },
+          { type: "other",      label: "Green Jacket" },
+          { type: "tournament", label: "The Masters" }
         ]
       },
       {
-        category: "College football shrines",
+        category: "Madison Square Garden",
         difficulty: 3,
         items: [
-          { type: "stadium", label: "The Big House" },
-          { type: "stadium", label: "Death Valley" },
-          { type: "stadium", label: "The Swamp" },
-          { type: "stadium", label: "Beaver Stadium" }
+          { type: "saying", label: "“World's Most Famous”" },
+          { type: "other",  label: "Spike Lee" },
+          { type: "player", label: "Willis Reed" },
+          { type: "team",   label: "Knicks" }
         ]
       }
     ]
@@ -873,47 +873,47 @@ const PUZZLES = [
 
   {
     id: 19,
-    title: "Bowl Season",
+    title: "Franchise DNA",
     level: "All-Pro",
     groups: [
       {
-        category: "Original 4 majors",
+        category: "Pittsburgh Steelers",
         difficulty: 0,
         items: [
-          { type: "event", label: "Rose Bowl" },
-          { type: "event", label: "Sugar Bowl" },
-          { type: "event", label: "Orange Bowl" },
-          { type: "event", label: "Cotton Bowl" }
+          { type: "stadium", label: "Acrisure Stadium" },
+          { type: "player",  label: "Mean Joe Greene" },
+          { type: "saying",  label: "“Steel Curtain”" },
+          { type: "other",   label: "Terrible Towel" }
         ]
       },
       {
-        category: "New Year's Six additions",
+        category: "Los Angeles Lakers",
         difficulty: 1,
         items: [
-          { type: "event", label: "Fiesta Bowl" },
-          { type: "event", label: "Peach Bowl" },
-          { type: "event", label: "Citrus Bowl" },
-          { type: "event", label: "Outback Bowl" }
+          { type: "stadium", label: "Crypto.com Arena" },
+          { type: "player",  label: "Jerry West" },
+          { type: "saying",  label: "“Showtime”" },
+          { type: "other",   label: "Purple & Gold" }
         ]
       },
       {
-        category: "Mid-tier bowls",
+        category: "New York Yankees",
         difficulty: 2,
         items: [
-          { type: "event", label: "Gator Bowl" },
-          { type: "event", label: "Sun Bowl" },
-          { type: "event", label: "Music City Bowl" },
-          { type: "event", label: "Holiday Bowl" }
+          { type: "stadium", label: "Yankee Stadium" },
+          { type: "player",  label: "Derek Jeter" },
+          { type: "saying",  label: "“Bronx Bombers”" },
+          { type: "other",   label: "Pinstripes" }
         ]
       },
       {
-        category: "Lesser-known bowls",
+        category: "Montreal Canadiens",
         difficulty: 3,
         items: [
-          { type: "event", label: "Liberty Bowl" },
-          { type: "event", label: "Independence Bowl" },
-          { type: "event", label: "Famous Idaho Potato" },
-          { type: "event", label: "Cheez-It Bowl" }
+          { type: "stadium", label: "Bell Centre" },
+          { type: "player",  label: "Maurice Richard" },
+          { type: "saying",  label: "“Les Habitants”" },
+          { type: "other",   label: "Bleu-Blanc-Rouge" }
         ]
       }
     ]

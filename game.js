@@ -6,11 +6,13 @@
   const STORAGE_CURSOR = "sc:cursor";
   const STORAGE_STATS = "sc:stats";
   const STORAGE_RUN = "sc:run";
+  const STORAGE_FILTER = "sc:filter";
 
   const state = {
-    order: [],          // randomized array of puzzle indices
+    order: [],          // randomized array of puzzle indices (respects filter)
     cursor: 0,          // position in `order`
     runId: 0,           // identifies current shuffle run (for stats dedup)
+    levelFilter: "all", // "all" | "Rookie" | "Pro" | "All-Pro" | "MVP"
     tiles: [],          // remaining tiles: { group, type, label, id }
     selected: new Set(), // tile ids
     solved: [],         // [{ groupIdx, items }]
@@ -168,8 +170,13 @@
     return arr;
   }
 
+  function indicesForFilter(filter) {
+    if (!filter || filter === "all") return PUZZLES.map((_, i) => i);
+    return PUZZLES.map((p, i) => p.level === filter ? i : -1).filter(i => i >= 0);
+  }
+
   function freshOrder() {
-    return shuffleInPlace(PUZZLES.map((_, i) => i));
+    return shuffleInPlace(indicesForFilter(state.levelFilter));
   }
 
   function persistProgress() {
@@ -177,19 +184,27 @@
       localStorage.setItem(STORAGE_ORDER, state.order.join(","));
       localStorage.setItem(STORAGE_CURSOR, String(state.cursor));
       localStorage.setItem(STORAGE_RUN, String(state.runId));
+      localStorage.setItem(STORAGE_FILTER, state.levelFilter);
     } catch (e) {}
   }
 
   function loadProgress() {
+    let storedFilter = "all";
+    try { storedFilter = localStorage.getItem(STORAGE_FILTER) || "all"; } catch (e) {}
+    state.levelFilter = ["all", "Rookie", "Pro", "All-Pro", "MVP"].includes(storedFilter) ? storedFilter : "all";
+
     try {
       const raw = localStorage.getItem(STORAGE_ORDER);
       const cur = localStorage.getItem(STORAGE_CURSOR);
       const run = localStorage.getItem(STORAGE_RUN);
       if (raw && cur !== null) {
         const parsed = raw.split(",").map(Number).filter(n => Number.isInteger(n) && n >= 0 && n < PUZZLES.length);
-        if (parsed.length === PUZZLES.length && new Set(parsed).size === PUZZLES.length) {
+        const expectedSet = new Set(indicesForFilter(state.levelFilter));
+        const parsedSet = new Set(parsed);
+        const sameSet = parsed.length === expectedSet.size && [...expectedSet].every(i => parsedSet.has(i));
+        if (sameSet) {
           state.order = parsed;
-          state.cursor = Math.max(0, Math.min(PUZZLES.length, parseInt(cur, 10) || 0));
+          state.cursor = Math.max(0, Math.min(state.order.length, parseInt(cur, 10) || 0));
           state.runId = run ? parseInt(run, 10) || 1 : 1;
           return;
         }
@@ -202,6 +217,18 @@
   }
 
   function resetProgress() {
+    state.order = freshOrder();
+    state.cursor = 0;
+    state.runId = Date.now();
+    persistProgress();
+    closeAllDone();
+    loadCurrent();
+  }
+
+  function selectLevel(tier) {
+    if (!tier) return;
+    if (state.levelFilter === tier) return; // no-op if already selected
+    state.levelFilter = tier;
     state.order = freshOrder();
     state.cursor = 0;
     state.runId = Date.now();
@@ -261,11 +288,9 @@
   }
 
   function render(blank) {
-    // Level meter
-    const puzzle = blank ? null : currentPuzzle();
-    const level = puzzle && puzzle.level ? puzzle.level : null;
+    // Level meter — highlight the active filter
     els.levelMeter.querySelectorAll(".meter-tier").forEach(el => {
-      el.classList.toggle("active", el.dataset.tier === level);
+      el.classList.toggle("active", el.dataset.tier === state.levelFilter);
     });
 
     // Mistakes dots
@@ -458,6 +483,12 @@
   els.submit.addEventListener("click", submitGuess);
   els.share.addEventListener("click", shareResult);
   els.newPuzzle.addEventListener("click", advance);
+
+  // Level filter
+  els.levelMeter.addEventListener("click", (e) => {
+    const btn = e.target.closest(".meter-tier");
+    if (btn && btn.dataset.tier) selectLevel(btn.dataset.tier);
+  });
 
   // How to Play
   els.helpBtn.addEventListener("click", openHowToPlay);
