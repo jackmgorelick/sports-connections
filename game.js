@@ -4,10 +4,13 @@
   const LEVELS = ["Rookie", "Pro", "All-Pro", "MVP"];
   const STORAGE_ORDER = "sc:order";
   const STORAGE_CURSOR = "sc:cursor";
+  const STORAGE_STATS = "sc:stats";
+  const STORAGE_RUN = "sc:run";
 
   const state = {
     order: [],          // randomized array of puzzle indices
     cursor: 0,          // position in `order`
+    runId: 0,           // identifies current shuffle run (for stats dedup)
     tiles: [],          // remaining tiles: { group, type, label, id }
     selected: new Set(), // tile ids
     solved: [],         // [{ groupIdx, items }]
@@ -29,8 +32,112 @@
     howToPlayClose: document.getElementById("how-to-play-close"),
     levelMeter: document.getElementById("level-meter"),
     allDone: document.getElementById("all-done"),
-    allDoneReset: document.getElementById("all-done-reset")
+    allDoneReset: document.getElementById("all-done-reset"),
+    statsBtn: document.getElementById("stats-btn"),
+    statsModal: document.getElementById("stats"),
+    statsClose: document.getElementById("stats-close"),
+    statPlayed: document.getElementById("stat-played"),
+    statSolved: document.getElementById("stat-solved"),
+    statWinrate: document.getElementById("stat-winrate"),
+    statPerfect: document.getElementById("stat-perfect"),
+    statDistribution: document.getElementById("stat-distribution"),
+    statByLevel: document.getElementById("stat-by-level"),
+    statEmpty: document.getElementById("stat-empty")
   };
+
+  function loadStats() {
+    try {
+      const raw = localStorage.getItem(STORAGE_STATS);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed;
+      }
+    } catch (e) {}
+    return [];
+  }
+
+  function saveStats(arr) {
+    try { localStorage.setItem(STORAGE_STATS, JSON.stringify(arr)); } catch (e) {}
+  }
+
+  function recordResult(puzzle, solved, mistakes) {
+    const stats = loadStats();
+    // Guard against double-recording the same cursor (e.g. on refresh)
+    if (stats.some(s => s.cursor === state.cursor && s.run === state.runId)) return;
+    stats.push({
+      run: state.runId,
+      cursor: state.cursor,
+      puzzleId: puzzle.id,
+      level: puzzle.level || "Pro",
+      solved: !!solved,
+      mistakes: mistakes
+    });
+    saveStats(stats);
+  }
+
+  function openStats() {
+    renderStats();
+    els.statsModal.hidden = false;
+    els.statsModal.setAttribute("aria-hidden", "false");
+  }
+  function closeStats() {
+    els.statsModal.hidden = true;
+    els.statsModal.setAttribute("aria-hidden", "true");
+  }
+
+  function renderStats() {
+    const stats = loadStats();
+    const played = stats.length;
+    const solved = stats.filter(s => s.solved).length;
+    const perfect = stats.filter(s => s.solved && s.mistakes === 0).length;
+    const winrate = played === 0 ? "—" : Math.round((solved / played) * 100) + "%";
+
+    els.statPlayed.textContent = String(played);
+    els.statSolved.textContent = String(solved);
+    els.statWinrate.textContent = winrate;
+    els.statPerfect.textContent = String(perfect);
+
+    // Mistake distribution: 0,1,2,3 mistakes (solved) + Out of guesses (4, unsolved)
+    const buckets = [
+      { label: "0 (Perfect)", filter: s => s.solved && s.mistakes === 0 },
+      { label: "1 mistake",   filter: s => s.solved && s.mistakes === 1 },
+      { label: "2 mistakes",  filter: s => s.solved && s.mistakes === 2 },
+      { label: "3 mistakes",  filter: s => s.solved && s.mistakes === 3 },
+      { label: "Out of guesses", state: "lost", filter: s => !s.solved }
+    ];
+    const bucketCounts = buckets.map(b => stats.filter(b.filter).length);
+    const maxBucket = Math.max(1, ...bucketCounts);
+
+    els.statDistribution.innerHTML = buckets.map((b, i) => {
+      const count = bucketCounts[i];
+      const width = (count / maxBucket) * 100;
+      const state = b.state ? ` data-state="${b.state}"` : "";
+      return `
+        <div class="dist-row"${state}>
+          <span class="dist-label">${b.label}</span>
+          <div class="dist-track"><div class="dist-bar" style="width: ${width}%"></div></div>
+          <span class="dist-count">${count}</span>
+        </div>`;
+    }).join("");
+
+    // By difficulty level: solved vs played per tier
+    els.statByLevel.innerHTML = LEVELS.map(tier => {
+      const subset = stats.filter(s => s.level === tier);
+      const sub_solved = subset.filter(s => s.solved).length;
+      const ratio = subset.length === 0 ? 0 : sub_solved / subset.length;
+      const width = ratio * 100;
+      const label = `${tier}`;
+      const count = `${sub_solved}/${subset.length}`;
+      return `
+        <div class="dist-row" data-level="${tier}">
+          <span class="dist-label">${label}</span>
+          <div class="dist-track"><div class="dist-bar" style="width: ${width}%"></div></div>
+          <span class="dist-count">${count}</span>
+        </div>`;
+    }).join("");
+
+    els.statEmpty.hidden = played > 0;
+  }
 
   function openHowToPlay() {
     els.howToPlay.hidden = false;
@@ -67,6 +174,7 @@
     try {
       localStorage.setItem(STORAGE_ORDER, state.order.join(","));
       localStorage.setItem(STORAGE_CURSOR, String(state.cursor));
+      localStorage.setItem(STORAGE_RUN, String(state.runId));
     } catch (e) {}
   }
 
@@ -74,24 +182,27 @@
     try {
       const raw = localStorage.getItem(STORAGE_ORDER);
       const cur = localStorage.getItem(STORAGE_CURSOR);
+      const run = localStorage.getItem(STORAGE_RUN);
       if (raw && cur !== null) {
         const parsed = raw.split(",").map(Number).filter(n => Number.isInteger(n) && n >= 0 && n < PUZZLES.length);
-        // Order should cover every puzzle exactly once; if not, regenerate.
         if (parsed.length === PUZZLES.length && new Set(parsed).size === PUZZLES.length) {
           state.order = parsed;
           state.cursor = Math.max(0, Math.min(PUZZLES.length, parseInt(cur, 10) || 0));
+          state.runId = run ? parseInt(run, 10) || 1 : 1;
           return;
         }
       }
     } catch (e) {}
     state.order = freshOrder();
     state.cursor = 0;
+    state.runId = Date.now();
     persistProgress();
   }
 
   function resetProgress() {
     state.order = freshOrder();
     state.cursor = 0;
+    state.runId = Date.now();
     persistProgress();
     closeAllDone();
     loadCurrent();
@@ -238,6 +349,7 @@
           "success"
         );
         state.gameOver = true;
+        recordResult(currentPuzzle(), true, lostCount);
       }
     } else {
       state.mistakes++;
@@ -248,6 +360,7 @@
         revealRemaining();
         setMessage("Out of guesses. Here's the answer.", "error");
         state.gameOver = true;
+        recordResult(currentPuzzle(), false, state.mistakes);
       }
     }
     render();
@@ -298,8 +411,18 @@
   els.howToPlay.addEventListener("click", (e) => {
     if (e.target === els.howToPlay) closeHowToPlay();
   });
+
+  // Stats
+  els.statsBtn.addEventListener("click", openStats);
+  els.statsClose.addEventListener("click", closeStats);
+  els.statsModal.addEventListener("click", (e) => {
+    if (e.target === els.statsModal) closeStats();
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !els.howToPlay.hidden) closeHowToPlay();
+    if (e.key !== "Escape") return;
+    if (!els.howToPlay.hidden) closeHowToPlay();
+    if (!els.statsModal.hidden) closeStats();
   });
 
   // All done

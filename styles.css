@@ -45,10 +45,14 @@ h1 {
   font-weight: 800;
 }
 
-#help-btn {
+.header-actions {
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  gap: 6px;
+}
+.icon-btn {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -65,10 +69,11 @@ h1 {
   padding: 0;
   transition: background 0.1s ease, color 0.1s ease;
 }
-#help-btn:hover {
+.icon-btn:hover {
   background: #121212;
   color: #ffffff;
 }
+.icon-btn svg { display: block; }
 
 #level-meter {
   margin: 12px auto 0;
@@ -360,3 +365,66 @@ footer {
 .swatch[data-diff="1"] { background: var(--diff-1); }
 .swatch[data-diff="2"] { background: var(--diff-2); }
 .swatch[data-diff="3"] { background: var(--diff-3); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 10px 0 6px;
+}
+.stat-cell {
+  background: #f5f5ef;
+  border-radius: 8px;
+  padding: 10px 6px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.dist { margin-top: 4px; }
+.dist-row {
+  display: grid;
+  grid-template-columns: 92px 1fr 28px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+.dist-label { color: var(--fg); }
+.dist-track {
+  background: #efefe6;
+  border-radius: 4px;
+  height: 16px;
+  overflow: hidden;
+}
+.dist-bar {
+  height: 100%;
+  background: #4f8a4f;
+  border-radius: 4px;
+  transition: width 0.25s ease;
+}
+.dist-row[data-state="lost"] .dist-bar { background: #b00020; }
+.dist-row[data-level="Rookie"]  .dist-bar { background: #6a8caf; }
+.dist-row[data-level="Pro"]     .dist-bar { background: #4f8a4f; }
+.dist-row[data-level="All-Pro"] .dist-bar { background: #b97a1f; }
+.dist-row[data-level="MVP"]     .dist-bar { background: #c08a2b; }
+.dist-count {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.modal-footnote {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}

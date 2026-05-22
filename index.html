@@ -9,7 +9,16 @@
 <body>
   <main id="game">
     <header>
-      <button id="help-btn" type="button" aria-label="How to play" title="How to play">?</button>
+      <div class="header-actions">
+        <button id="stats-btn" class="icon-btn" type="button" aria-label="Statistics" title="Statistics">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <line x1="12" y1="20" x2="12" y2="9"/>
+            <line x1="18" y1="20" x2="18" y2="11"/>
+          </svg>
+        </button>
+        <button id="help-btn" class="icon-btn" type="button" aria-label="How to play" title="How to play">?</button>
+      </div>
       <h1>Sports Connections</h1>
       <p class="subtitle">Find four groups of four. Stadiums, players, teams, sayings — anything sports.</p>
       <div id="level-meter" role="group" aria-label="Difficulty level">
@@ -41,6 +50,27 @@
       <button id="new-puzzle" type="button" class="link-button">New puzzle</button>
     </footer>
   </main>
+
+  <div id="stats" class="modal-overlay" hidden aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="stats-title">
+      <button class="modal-close" id="stats-close" type="button" aria-label="Close">×</button>
+      <h2 id="stats-title">Statistics</h2>
+
+      <div class="stats-grid">
+        <div class="stat-cell"><div class="stat-value" id="stat-played">0</div><div class="stat-label">Played</div></div>
+        <div class="stat-cell"><div class="stat-value" id="stat-solved">0</div><div class="stat-label">Solved</div></div>
+        <div class="stat-cell"><div class="stat-value" id="stat-winrate">—</div><div class="stat-label">Win %</div></div>
+        <div class="stat-cell"><div class="stat-value" id="stat-perfect">0</div><div class="stat-label">Perfect</div></div>
+      </div>
+
+      <h3>Mistake Distribution</h3>
+      <div id="stat-distribution" class="dist"></div>
+      <p class="modal-footnote" id="stat-empty" hidden>Play a puzzle to start tracking your stats.</p>
+
+      <h3>By Difficulty</h3>
+      <div id="stat-by-level" class="dist"></div>
+    </div>
+  </div>
 
   <div id="all-done" class="modal-overlay" hidden aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="all-done-title">
