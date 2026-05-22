@@ -1301,5 +1301,245 @@ const PUZZLES = [
         ]
       }
     ]
+  },
+
+  {
+    id: 28,
+    title: "GOAT Code",
+    level: "All-Pro",
+    groups: [
+      {
+        category: "Tom Brady",
+        difficulty: 0,
+        items: [
+          { type: "team",     label: "Patriots" },
+          { type: "nickname", label: "“TB12”" },
+          { type: "other",    label: "#12" },
+          { type: "coach",    label: "Bill Belichick" }
+        ]
+      },
+      {
+        category: "Michael Jordan",
+        difficulty: 1,
+        items: [
+          { type: "team",     label: "Bulls" },
+          { type: "nickname", label: "“Air Jordan”" },
+          { type: "other",    label: "#23" },
+          { type: "coach",    label: "Phil Jackson" }
+        ]
+      },
+      {
+        category: "Wayne Gretzky",
+        difficulty: 2,
+        items: [
+          { type: "team",     label: "Oilers" },
+          { type: "nickname", label: "“The Great One”" },
+          { type: "other",    label: "#99" },
+          { type: "player",   label: "Mark Messier" }
+        ]
+      },
+      {
+        category: "Tiger Woods",
+        difficulty: 3,
+        items: [
+          { type: "location", label: "Stanford" },
+          { type: "nickname", label: "“Tiger”" },
+          { type: "location", label: "Augusta" },
+          { type: "other",    label: "Red Sunday" }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 29,
+    title: "Family Name",
+    level: "All-Pro",
+    groups: [
+      {
+        category: "Johnsons",
+        difficulty: 0,
+        items: [
+          { type: "player", label: "Magic Johnson" },
+          { type: "player", label: "Randy Johnson" },
+          { type: "player", label: "Calvin Johnson" },
+          { type: "coach",  label: "Jimmy Johnson" }
+        ]
+      },
+      {
+        category: "Browns",
+        difficulty: 1,
+        items: [
+          { type: "player", label: "Jim Brown" },
+          { type: "player", label: "Tim Brown" },
+          { type: "player", label: "Mordecai Brown" },
+          { type: "coach",  label: "Larry Brown" }
+        ]
+      },
+      {
+        category: "Jacksons",
+        difficulty: 2,
+        items: [
+          { type: "player", label: "Bo Jackson" },
+          { type: "coach",  label: "Phil Jackson" },
+          { type: "player", label: "Reggie Jackson" },
+          { type: "player", label: "Lamar Jackson" }
+        ]
+      },
+      {
+        category: "Williamses",
+        difficulty: 3,
+        items: [
+          { type: "player", label: "Ted Williams" },
+          { type: "player", label: "Caleb Williams" },
+          { type: "coach",  label: "Roy Williams" },
+          { type: "player", label: "Ricky Williams" }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 30,
+    title: "The Improbable",
+    level: "MVP",
+    groups: [
+      {
+        category: "28-3 (Super Bowl LI)",
+        difficulty: 0,
+        items: [
+          { type: "player", label: "Tom Brady" },
+          { type: "team",   label: "Falcons" },
+          { type: "other",  label: "28-3" },
+          { type: "player", label: "James White" }
+        ]
+      },
+      {
+        category: "2004 ALCS",
+        difficulty: 1,
+        items: [
+          { type: "team",   label: "Red Sox" },
+          { type: "team",   label: "Yankees" },
+          { type: "other",  label: "Down 3-0" },
+          { type: "player", label: "David Ortiz" }
+        ]
+      },
+      {
+        category: "Helmet Catch (SB XLII)",
+        difficulty: 2,
+        items: [
+          { type: "player", label: "Eli Manning" },
+          { type: "player", label: "David Tyree" },
+          { type: "team",   label: "Giants" },
+          { type: "other",  label: "18-1 Patriots" }
+        ]
+      },
+      {
+        category: "3-1 Lead (2016 NBA Finals)",
+        difficulty: 3,
+        items: [
+          { type: "player", label: "LeBron James" },
+          { type: "team",   label: "Cavaliers" },
+          { type: "team",   label: "Warriors" },
+          { type: "other",  label: "The Block" }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 31,
+    title: "Iron Streaks",
+    level: "MVP",
+    groups: [
+      {
+        category: "Cal Ripken's 2,632",
+        difficulty: 0,
+        items: [
+          { type: "player",   label: "Cal Ripken Jr." },
+          { type: "team",     label: "Orioles" },
+          { type: "other",    label: "2,632 games" },
+          { type: "nickname", label: "“Iron Man”" }
+        ]
+      },
+      {
+        category: "DiMaggio's 56-game hit",
+        difficulty: 1,
+        items: [
+          { type: "player",   label: "Joe DiMaggio" },
+          { type: "team",     label: "Yankees" },
+          { type: "other",    label: "56 games" },
+          { type: "nickname", label: "“Joltin' Joe”" }
+        ]
+      },
+      {
+        category: "Brett Favre's start streak",
+        difficulty: 2,
+        items: [
+          { type: "player", label: "Brett Favre" },
+          { type: "team",   label: "Packers" },
+          { type: "other",  label: "297 starts" },
+          { type: "other",  label: "QB record" }
+        ]
+      },
+      {
+        category: "UCLA's 88-game win streak",
+        difficulty: 3,
+        items: [
+          { type: "coach", label: "John Wooden" },
+          { type: "team",  label: "UCLA" },
+          { type: "other", label: "88 wins" },
+          { type: "other", label: "1971-74" }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 32,
+    title: "Famous Last Stands",
+    level: "MVP",
+    groups: [
+      {
+        category: "Kobe's 60-point farewell",
+        difficulty: 0,
+        items: [
+          { type: "player", label: "Kobe Bryant" },
+          { type: "team",   label: "Lakers" },
+          { type: "other",  label: "60 points" },
+          { type: "saying", label: "“Mamba Out”" }
+        ]
+      },
+      {
+        category: "Jeter's last home hit",
+        difficulty: 1,
+        items: [
+          { type: "player",   label: "Derek Jeter" },
+          { type: "stadium",  label: "Yankee Stadium" },
+          { type: "other",    label: "Walk-off single" },
+          { type: "nickname", label: "“The Captain”" }
+        ]
+      },
+      {
+        category: "Mariano's mound exit",
+        difficulty: 2,
+        items: [
+          { type: "player", label: "Mariano Rivera" },
+          { type: "player", label: "Andy Pettitte" },
+          { type: "saying", label: "“Enter Sandman”" },
+          { type: "other",  label: "Cutter" }
+        ]
+      },
+      {
+        category: "Ortiz's final October",
+        difficulty: 3,
+        items: [
+          { type: "player",   label: "David Ortiz" },
+          { type: "team",     label: "Red Sox" },
+          { type: "nickname", label: "“Big Papi”" },
+          { type: "other",    label: "2016 ALDS" }
+        ]
+      }
+    ]
   }
 ];
