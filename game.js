@@ -14,6 +14,7 @@
     tiles: [],          // remaining tiles: { group, type, label, id }
     selected: new Set(), // tile ids
     solved: [],         // [{ groupIdx, items }]
+    guesses: [],        // each guess as [diff, diff, diff, diff] for share grid
     mistakes: 0,
     gameOver: false
   };
@@ -26,6 +27,7 @@
     shuffle: document.getElementById("shuffle"),
     deselect: document.getElementById("deselect"),
     submit: document.getElementById("submit"),
+    share: document.getElementById("share"),
     newPuzzle: document.getElementById("new-puzzle"),
     helpBtn: document.getElementById("help-btn"),
     howToPlay: document.getElementById("how-to-play"),
@@ -238,6 +240,7 @@
     state.tiles = tiles;
     state.selected.clear();
     state.solved = [];
+    state.guesses = [];
     state.mistakes = 0;
     state.gameOver = false;
     setMessage("");
@@ -302,6 +305,7 @@
     els.submit.disabled = state.gameOver || state.selected.size !== SELECTION_LIMIT;
     els.deselect.disabled = state.gameOver || state.selected.size === 0;
     els.shuffle.disabled = state.gameOver || state.tiles.length === 0;
+    els.share.disabled = !(state.gameOver && state.guesses.length > 0);
   }
 
   function toggleSelect(id) {
@@ -329,6 +333,9 @@
     if (state.selected.size !== SELECTION_LIMIT || state.gameOver) return;
 
     const guessTiles = state.tiles.filter(t => state.selected.has(t.id));
+    const puzzleGroups = currentPuzzle().groups;
+    state.guesses.push(guessTiles.map(t => puzzleGroups[t.group].difficulty));
+
     const groupCounts = guessTiles.reduce((acc, t) => {
       acc[t.group] = (acc[t.group] || 0) + 1;
       return acc;
@@ -399,10 +406,57 @@
     if (tone) els.message.classList.add(tone);
   }
 
+  function buildShareText() {
+    const puzzle = currentPuzzle();
+    const EMOJI = ["🟨", "🟩", "🟦", "🟪"];
+    const grid = state.guesses.map(row => row.map(d => EMOJI[d] || "⬜").join("")).join("\n");
+    const won = state.mistakes < MAX_MISTAKES;
+    let result;
+    if (won && state.mistakes === 0)       result = "Perfect game! 🏆";
+    else if (won && state.mistakes === 1)  result = "Solved with 1 mistake.";
+    else if (won)                          result = `Solved with ${state.mistakes} mistakes.`;
+    else                                   result = "Out of guesses.";
+    const url = "jackmgorelick.github.io/sports-connections";
+    return `Sports Connections #${puzzle.id} — ${puzzle.level}\n${grid}\n${result}\n${url}`;
+  }
+
+  async function shareResult() {
+    if (!state.gameOver || state.guesses.length === 0) return;
+    const text = buildShareText();
+    let copied = false;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    } catch (e) {}
+    if (!copied) {
+      // Fallback for older browsers / insecure contexts
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { copied = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (copied) {
+      const prev = els.message.textContent;
+      const prevTone = els.message.classList.contains("error") ? "error" : els.message.classList.contains("success") ? "success" : null;
+      setMessage("Copied to clipboard!", "success");
+      setTimeout(() => setMessage(prev, prevTone), 2000);
+    } else {
+      setMessage("Could not copy — long-press to copy manually.", "error");
+    }
+  }
+
   // Wire up controls
   els.shuffle.addEventListener("click", shuffleGrid);
   els.deselect.addEventListener("click", deselectAll);
   els.submit.addEventListener("click", submitGuess);
+  els.share.addEventListener("click", shareResult);
   els.newPuzzle.addEventListener("click", advance);
 
   // How to Play
