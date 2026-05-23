@@ -201,47 +201,47 @@ const PUZZLES = [
 
   {
     id: 5,
-    title: "Coaching Mount Rushmore",
-    level: "Rookie",
+    title: "Coach Decoded",
+    level: "All-Pro",
     groups: [
       {
-        category: "NBA coaches",
+        category: "Bill Belichick",
         difficulty: 0,
         items: [
-          { type: "coach", label: "Phil Jackson" },
-          { type: "coach", label: "Pat Riley" },
-          { type: "coach", label: "Gregg Popovich" },
-          { type: "coach", label: "Red Auerbach" }
+          { type: "saying",  label: "“Do Your Job”" },
+          { type: "team",    label: "Patriots" },
+          { type: "player",  label: "Tom Brady" },
+          { type: "stadium", label: "Gillette Stadium" }
         ]
       },
       {
-        category: "NFL coaches",
+        category: "Nick Saban",
         difficulty: 1,
         items: [
-          { type: "coach", label: "Vince Lombardi" },
-          { type: "coach", label: "Bill Belichick" },
-          { type: "coach", label: "Don Shula" },
-          { type: "coach", label: "Bill Walsh" }
+          { type: "saying",  label: "“The Process”" },
+          { type: "team",    label: "Crimson Tide" },
+          { type: "player",  label: "Mark Ingram" },
+          { type: "location", label: "Tuscaloosa" }
         ]
       },
       {
-        category: "College basketball",
+        category: "Coach K",
         difficulty: 2,
         items: [
-          { type: "coach", label: "John Wooden" },
-          { type: "coach", label: "Mike Krzyzewski" },
-          { type: "coach", label: "Dean Smith" },
-          { type: "coach", label: "Bob Knight" }
+          { type: "nickname", label: "“Coach K”" },
+          { type: "team",     label: "Blue Devils" },
+          { type: "player",   label: "Christian Laettner" },
+          { type: "stadium",  label: "Cameron Indoor" }
         ]
       },
       {
-        category: "College football",
+        category: "Gregg Popovich",
         difficulty: 3,
         items: [
-          { type: "coach", label: "Nick Saban" },
-          { type: "coach", label: "Bear Bryant" },
-          { type: "coach", label: "Knute Rockne" },
-          { type: "coach", label: "Joe Paterno" }
+          { type: "saying",  label: "“Pound the Rock”" },
+          { type: "team",    label: "Spurs" },
+          { type: "player",  label: "Tim Duncan" },
+          { type: "stadium", label: "AT&T Center" }
         ]
       }
     ]
@@ -969,47 +969,47 @@ const PUZZLES = [
 
   {
     id: 21,
-    title: "Hall of Fame Address",
-    level: "Rookie",
+    title: "Word Players",
+    level: "MVP",
     groups: [
       {
-        category: "Cooperstown (MLB)",
+        category: "Last names = colors",
         difficulty: 0,
         items: [
-          { type: "player", label: "Babe Ruth" },
-          { type: "player", label: "Cy Young" },
-          { type: "player", label: "Hank Aaron" },
-          { type: "player", label: "Willie Mays" }
+          { type: "player", label: "Reggie White" },
+          { type: "player", label: "Jim Brown" },
+          { type: "player", label: "Draymond Green" },
+          { type: "player", label: "Bud Black" }
         ]
       },
       {
-        category: "Canton (NFL)",
+        category: "Last names = animals",
         difficulty: 1,
         items: [
-          { type: "player", label: "Jim Brown" },
-          { type: "player", label: "Joe Montana" },
-          { type: "player", label: "Walter Payton" },
-          { type: "player", label: "Jerry Rice" }
+          { type: "player", label: "Larry Bird" },
+          { type: "player", label: "CeeDee Lamb" },
+          { type: "player", label: "AJ Hawk" },
+          { type: "player", label: "Randy Wolf" }
         ]
       },
       {
-        category: "Springfield (NBA)",
+        category: "Last names = occupations",
         difficulty: 2,
         items: [
-          { type: "player", label: "Michael Jordan" },
-          { type: "player", label: "Larry Bird" },
-          { type: "player", label: "Magic Johnson" },
-          { type: "player", label: "Kareem" }
+          { type: "player", label: "Geno Smith" },
+          { type: "player", label: "James Cook" },
+          { type: "player", label: "Travis Hunter" },
+          { type: "player", label: "Vince Carter" }
         ]
       },
       {
-        category: "Toronto (NHL)",
+        category: "Last names = landscape",
         difficulty: 3,
         items: [
-          { type: "player", label: "Wayne Gretzky" },
-          { type: "player", label: "Gordie Howe" },
-          { type: "player", label: "Bobby Orr" },
-          { type: "player", label: "Mario Lemieux" }
+          { type: "player", label: "Grant Hill" },
+          { type: "player", label: "Philip Rivers" },
+          { type: "player", label: "Tiger Woods" },
+          { type: "player", label: "Justin Fields" }
         ]
       }
     ]
@@ -1161,47 +1161,47 @@ const PUZZLES = [
 
   {
     id: 25,
-    title: "First Overall",
-    level: "Pro",
+    title: "Sports Idioms",
+    level: "MVP",
     groups: [
       {
-        category: "MLB #1 picks",
+        category: "Means EASY WIN",
         difficulty: 0,
         items: [
-          { type: "player", label: "Bryce Harper" },
-          { type: "player", label: "Adley Rutschman" },
-          { type: "player", label: "Paul Skenes" },
-          { type: "player", label: "Eli Willits" }
+          { type: "saying", label: "Slam Dunk" },
+          { type: "saying", label: "Layup" },
+          { type: "saying", label: "Walk-off" },
+          { type: "saying", label: "Tap-in" }
         ]
       },
       {
-        category: "NBA #1 picks",
+        category: "Means UNEXPECTED",
         difficulty: 1,
         items: [
-          { type: "player", label: "LeBron James" },
-          { type: "player", label: "Zion Williamson" },
-          { type: "player", label: "Victor Wembanyama" },
-          { type: "player", label: "Cooper Flagg" }
+          { type: "saying", label: "Curveball" },
+          { type: "saying", label: "Out of Left Field" },
+          { type: "saying", label: "Blindside" },
+          { type: "saying", label: "Hail Mary" }
         ]
       },
       {
-        category: "NFL #1 picks",
+        category: "Means GIVE UP",
         difficulty: 2,
         items: [
-          { type: "player", label: "Peyton Manning" },
-          { type: "player", label: "Trevor Lawrence" },
-          { type: "player", label: "Caleb Williams" },
-          { type: "player", label: "Cam Ward" }
+          { type: "saying", label: "Throw in the Towel" },
+          { type: "saying", label: "Punt" },
+          { type: "saying", label: "Tap Out" },
+          { type: "saying", label: "Wave the White Flag" }
         ]
       },
       {
-        category: "NHL #1 picks",
+        category: "Means FAIL",
         difficulty: 3,
         items: [
-          { type: "player", label: "Connor McDavid" },
-          { type: "player", label: "Connor Bedard" },
-          { type: "player", label: "Macklin Celebrini" },
-          { type: "player", label: "Matthew Schaefer" }
+          { type: "saying", label: "Strike Out" },
+          { type: "saying", label: "Whiff" },
+          { type: "saying", label: "Choke" },
+          { type: "saying", label: "Fumble" }
         ]
       }
     ]
@@ -1586,6 +1586,54 @@ const PUZZLES = [
           { type: "saying", label: "Walk" },
           { type: "saying", label: "Shut" },
           { type: "saying", label: "Time" }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 34,
+    title: "Prefix Power",
+    level: "MVP",
+    groups: [
+      {
+        category: "BIG ___",
+        difficulty: 0,
+        items: [
+          { type: "saying", label: "Game" },
+          { type: "saying", label: "Three" },
+          { type: "saying", label: "Papi" },
+          { type: "saying", label: "Ten" }
+        ]
+      },
+      {
+        category: "TRIPLE ___",
+        difficulty: 1,
+        items: [
+          { type: "saying", label: "Crown" },
+          { type: "saying", label: "Double" },
+          { type: "saying", label: "Play" },
+          { type: "saying", label: "Threat" }
+        ]
+      },
+      {
+        category: "POWER ___",
+        difficulty: 2,
+        items: [
+          { type: "saying", label: "Forward" },
+          { type: "saying", label: "Hitter" },
+          { type: "saying", label: "Ranking" },
+          { type: "saying", label: "Five" }
+        ]
+      },
+      {
+        category: "GAME ___",
+        difficulty: 3,
+        items: [
+          { type: "saying", label: "Plan" },
+          { type: "saying", label: "Time" },
+          { type: "saying", label: "Day" },
+          { type: "saying", label: "Winner" }
         ]
       }
     ]
