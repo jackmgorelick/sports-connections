@@ -10,7 +10,7 @@ const PUZZLES = [
   {
     id: 1,
     title: "Four Cities",
-    level: "MVP",
+    level: "All-Pro",
     groups: [
       {
         category: "Boston sports",
@@ -106,7 +106,7 @@ const PUZZLES = [
   {
     id: 3,
     title: "Iconic Jersey Numbers",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "Wore #42",
@@ -154,7 +154,7 @@ const PUZZLES = [
   {
     id: 4,
     title: "Field Marks",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "Fenway Park",
@@ -202,7 +202,7 @@ const PUZZLES = [
   {
     id: 5,
     title: "Coaching Mount Rushmore",
-    level: "Pro",
+    level: "Rookie",
     groups: [
       {
         category: "NBA coaches",
@@ -250,7 +250,7 @@ const PUZZLES = [
   {
     id: 6,
     title: "NCAA Blue Bloods",
-    level: "Pro",
+    level: "Rookie",
     groups: [
       {
         category: "Duke alums",
@@ -298,7 +298,7 @@ const PUZZLES = [
   {
     id: 7,
     title: "Sports Lingo",
-    level: "All-Pro",
+    level: "Rookie",
     groups: [
       {
         category: "Football terms",
@@ -394,7 +394,7 @@ const PUZZLES = [
   {
     id: 9,
     title: "Up in the Rafters",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "Retired by Yankees",
@@ -586,7 +586,7 @@ const PUZZLES = [
   {
     id: 13,
     title: "Gridiron Powerhouses",
-    level: "Pro",
+    level: "Rookie",
     groups: [
       {
         category: "Alabama Crimson Tide",
@@ -634,7 +634,7 @@ const PUZZLES = [
   {
     id: 14,
     title: "One Team Forever",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "NBA lifers",
@@ -730,7 +730,7 @@ const PUZZLES = [
   {
     id: 16,
     title: "Heisman Through the Years",
-    level: "Pro",
+    level: "Rookie",
     groups: [
       {
         category: "'90s winners",
@@ -778,7 +778,7 @@ const PUZZLES = [
   {
     id: 17,
     title: "Frozen Royalty",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "Canadiens legends",
@@ -922,7 +922,7 @@ const PUZZLES = [
   {
     id: 20,
     title: "Elite Stats Clubs",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "NBA 50/40/90 club",
@@ -1021,43 +1021,43 @@ const PUZZLES = [
     level: "All-Pro",
     groups: [
       {
-        category: "SportsCenter anchors",
+        category: "Play-by-play voices",
         difficulty: 0,
         items: [
-          { type: "other", label: "Stuart Scott" },
-          { type: "other", label: "Dan Patrick" },
-          { type: "other", label: "Keith Olbermann" },
-          { type: "other", label: "Scott Van Pelt" }
+          { type: "other", label: "Joe Buck" },
+          { type: "other", label: "Jim Nantz" },
+          { type: "other", label: "Mike Breen" },
+          { type: "other", label: "Ian Eagle" }
         ]
       },
       {
-        category: "NBA shouters",
+        category: "Game booth analysts",
         difficulty: 1,
         items: [
-          { type: "other", label: "Stephen A. Smith" },
-          { type: "other", label: "Skip Bayless" },
-          { type: "other", label: "Charles Barkley" },
-          { type: "other", label: "Michael Wilbon" }
+          { type: "other", label: "Troy Aikman" },
+          { type: "other", label: "Tony Romo" },
+          { type: "other", label: "Cris Collinsworth" },
+          { type: "other", label: "Kirk Herbstreit" }
         ]
       },
       {
-        category: "NFL voices",
+        category: "NFL sideline reporters",
         difficulty: 2,
         items: [
-          { type: "other", label: "Chris Berman" },
-          { type: "other", label: "Mike Greenberg" },
-          { type: "other", label: "Adam Schefter" },
-          { type: "other", label: "Mike Tirico" }
+          { type: "other", label: "Erin Andrews" },
+          { type: "other", label: "Lisa Salters" },
+          { type: "other", label: "Melissa Stark" },
+          { type: "other", label: "Tracy Wolfson" }
         ]
       },
       {
-        category: "College sideline",
+        category: "Studio personalities",
         difficulty: 3,
         items: [
-          { type: "other", label: "Lee Corso" },
-          { type: "other", label: "Kirk Herbstreit" },
-          { type: "other", label: "Dick Vitale" },
-          { type: "other", label: "Erin Andrews" }
+          { type: "other", label: "Stephen A. Smith" },
+          { type: "other", label: "Pat McAfee" },
+          { type: "other", label: "Scott Van Pelt" },
+          { type: "other", label: "Mike Greenberg" }
         ]
       }
     ]
@@ -1306,7 +1306,7 @@ const PUZZLES = [
   {
     id: 28,
     title: "GOAT Code",
-    level: "All-Pro",
+    level: "Pro",
     groups: [
       {
         category: "Tom Brady",
@@ -1538,6 +1538,54 @@ const PUZZLES = [
           { type: "team",     label: "Red Sox" },
           { type: "nickname", label: "“Big Papi”" },
           { type: "other",    label: "2016 ALDS" }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 33,
+    title: "What Follows?",
+    level: "MVP",
+    groups: [
+      {
+        category: "___ BALL (pitch types)",
+        difficulty: 0,
+        items: [
+          { type: "saying", label: "Curve" },
+          { type: "saying", label: "Knuckle" },
+          { type: "saying", label: "Spit" },
+          { type: "saying", label: "Screw" }
+        ]
+      },
+      {
+        category: "___ SHOT",
+        difficulty: 1,
+        items: [
+          { type: "saying", label: "Slap" },
+          { type: "saying", label: "Wrist" },
+          { type: "saying", label: "Snap" },
+          { type: "saying", label: "Bank" }
+        ]
+      },
+      {
+        category: "___ PLAY",
+        difficulty: 2,
+        items: [
+          { type: "saying", label: "Triple" },
+          { type: "saying", label: "Double" },
+          { type: "saying", label: "Power" },
+          { type: "saying", label: "Set" }
+        ]
+      },
+      {
+        category: "___ OUT",
+        difficulty: 3,
+        items: [
+          { type: "saying", label: "Strike" },
+          { type: "saying", label: "Walk" },
+          { type: "saying", label: "Shut" },
+          { type: "saying", label: "Time" }
         ]
       }
     ]
