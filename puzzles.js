@@ -105,47 +105,47 @@ const PUZZLES = [
 
   {
     id: 3,
-    title: "Iconic Jersey Numbers",
-    level: "Pro",
+    title: "Iconic Moments",
+    level: "MVP",
     groups: [
       {
-        category: "Wore #42",
+        category: "The Catch (1981)",
         difficulty: 0,
         items: [
-          { type: "player", label: "Jackie Robinson" },
-          { type: "player", label: "Mariano Rivera" },
-          { type: "player", label: "Ronnie Lott" },
-          { type: "player", label: "Pat Tillman" }
+          { type: "player", label: "Joe Montana" },
+          { type: "player", label: "Dwight Clark" },
+          { type: "team",   label: "49ers" },
+          { type: "other",  label: "NFC Title" }
         ]
       },
       {
-        category: "Wore #7",
+        category: "Wilt's 100 (1962)",
         difficulty: 1,
         items: [
-          { type: "player", label: "Mickey Mantle" },
-          { type: "player", label: "John Elway" },
-          { type: "player", label: "Phil Esposito" },
-          { type: "player", label: "Ben Roethlisberger" }
+          { type: "player",   label: "Wilt Chamberlain" },
+          { type: "team",     label: "Warriors" },
+          { type: "location", label: "Hershey, PA" },
+          { type: "other",    label: "100 points" }
         ]
       },
       {
-        category: "Wore #21",
+        category: "Aaron's 715 (1974)",
         difficulty: 2,
         items: [
-          { type: "player", label: "Roberto Clemente" },
-          { type: "player", label: "Tim Duncan" },
-          { type: "player", label: "Deion Sanders" },
-          { type: "player", label: "LaDainian Tomlinson" }
+          { type: "player", label: "Hank Aaron" },
+          { type: "team",   label: "Braves" },
+          { type: "other",  label: "Broke Ruth" },
+          { type: "saying", label: "“715”" }
         ]
       },
       {
-        category: "Wore #32",
+        category: "Shot Heard Round the World (1951)",
         difficulty: 3,
         items: [
-          { type: "player", label: "Magic Johnson" },
-          { type: "player", label: "Jim Brown" },
-          { type: "player", label: "Sandy Koufax" },
-          { type: "player", label: "Karl Malone" }
+          { type: "player", label: "Bobby Thomson" },
+          { type: "team",   label: "Giants" },
+          { type: "team",   label: "Brooklyn Dodgers" },
+          { type: "saying", label: "“Giants win the pennant!”" }
         ]
       }
     ]
@@ -249,54 +249,6 @@ const PUZZLES = [
 
   {
     id: 6,
-    title: "NCAA Blue Bloods",
-    level: "Rookie",
-    groups: [
-      {
-        category: "Duke alums",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Christian Laettner" },
-          { type: "player", label: "Grant Hill" },
-          { type: "player", label: "JJ Redick" },
-          { type: "player", label: "Zion Williamson" }
-        ]
-      },
-      {
-        category: "UNC alums",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Michael Jordan" },
-          { type: "player", label: "James Worthy" },
-          { type: "player", label: "Vince Carter" },
-          { type: "player", label: "Tyler Hansbrough" }
-        ]
-      },
-      {
-        category: "Kentucky alums",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Anthony Davis" },
-          { type: "player", label: "John Wall" },
-          { type: "player", label: "Karl-Anthony Towns" },
-          { type: "player", label: "DeMarcus Cousins" }
-        ]
-      },
-      {
-        category: "Kansas alums",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Wilt Chamberlain" },
-          { type: "player", label: "Paul Pierce" },
-          { type: "player", label: "Andrew Wiggins" },
-          { type: "player", label: "Joel Embiid" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 7,
     title: "Sports Lingo",
     level: "Rookie",
     groups: [
@@ -344,7 +296,7 @@ const PUZZLES = [
   },
 
   {
-    id: 8,
+    id: 7,
     title: "At the Movies",
     level: "Rookie",
     groups: [
@@ -392,7 +344,7 @@ const PUZZLES = [
   },
 
   {
-    id: 9,
+    id: 8,
     title: "Up in the Rafters",
     level: "Pro",
     groups: [
@@ -440,103 +392,55 @@ const PUZZLES = [
   },
 
   {
-    id: 10,
-    title: "Hockey Immortals",
+    id: 9,
+    title: "Same First Name",
     level: "Pro",
     groups: [
       {
-        category: "Goaltenders",
+        category: "Toms",
         difficulty: 0,
         items: [
-          { type: "player", label: "Patrick Roy" },
-          { type: "player", label: "Martin Brodeur" },
-          { type: "player", label: "Ken Dryden" },
-          { type: "player", label: "Dominik Hasek" }
+          { type: "player", label: "Tom Brady" },
+          { type: "player", label: "Tom Watson" },
+          { type: "player", label: "Tom Glavine" },
+          { type: "player", label: "Tom Seaver" }
         ]
       },
       {
-        category: "Defensemen",
+        category: "Mikes",
         difficulty: 1,
         items: [
-          { type: "player", label: "Bobby Orr" },
-          { type: "player", label: "Ray Bourque" },
-          { type: "player", label: "Nicklas Lidstrom" },
-          { type: "player", label: "Paul Coffey" }
+          { type: "player", label: "Mike Trout" },
+          { type: "player", label: "Mike Schmidt" },
+          { type: "player", label: "Mike Modano" },
+          { type: "coach",  label: "Mike Krzyzewski" }
         ]
       },
       {
-        category: "Centers",
+        category: "Joes",
         difficulty: 2,
         items: [
-          { type: "player", label: "Wayne Gretzky" },
-          { type: "player", label: "Mario Lemieux" },
-          { type: "player", label: "Sidney Crosby" },
-          { type: "player", label: "Mark Messier" }
-        ]
-      },
-      {
-        category: "Wingers",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Gordie Howe" },
-          { type: "player", label: "Maurice Richard" },
-          { type: "player", label: "Brett Hull" },
-          { type: "player", label: "Jaromir Jagr" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 11,
-    title: "Under Center: QB Eras",
-    level: "Rookie",
-    groups: [
-      {
-        category: "'60s/'70s legends",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Johnny Unitas" },
-          { type: "player", label: "Bart Starr" },
-          { type: "player", label: "Roger Staubach" },
+          { type: "player", label: "Joe Montana" },
+          { type: "player", label: "Joe DiMaggio" },
+          { type: "player", label: "Joe Burrow" },
           { type: "player", label: "Joe Namath" }
         ]
       },
       {
-        category: "'80s greats",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Joe Montana" },
-          { type: "player", label: "Dan Marino" },
-          { type: "player", label: "John Elway" },
-          { type: "player", label: "Jim Kelly" }
-        ]
-      },
-      {
-        category: "'90s/2000s stars",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Brett Favre" },
-          { type: "player", label: "Peyton Manning" },
-          { type: "player", label: "Drew Brees" },
-          { type: "player", label: "Steve Young" }
-        ]
-      },
-      {
-        category: "Today's gunslingers",
+        category: "Bobbys",
         difficulty: 3,
         items: [
-          { type: "player", label: "Patrick Mahomes" },
-          { type: "player", label: "Josh Allen" },
-          { type: "player", label: "Joe Burrow" },
-          { type: "player", label: "Lamar Jackson" }
+          { type: "player", label: "Bobby Orr" },
+          { type: "player", label: "Bobby Hull" },
+          { type: "player", label: "Bob Cousy" },
+          { type: "coach",  label: "Bobby Knight" }
         ]
       }
     ]
   },
 
   {
-    id: 12,
+    id: 10,
     title: "Branded",
     level: "Rookie",
     groups: [
@@ -584,103 +488,7 @@ const PUZZLES = [
   },
 
   {
-    id: 13,
-    title: "Gridiron Powerhouses",
-    level: "Rookie",
-    groups: [
-      {
-        category: "Alabama Crimson Tide",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Derrick Henry" },
-          { type: "player", label: "Mark Ingram" },
-          { type: "player", label: "Tua Tagovailoa" },
-          { type: "player", label: "Bryce Young" }
-        ]
-      },
-      {
-        category: "Notre Dame Irish",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Joe Montana" },
-          { type: "player", label: "Tim Brown" },
-          { type: "player", label: "Jerome Bettis" },
-          { type: "player", label: "Manti Te'o" }
-        ]
-      },
-      {
-        category: "USC Trojans",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Reggie Bush" },
-          { type: "player", label: "Matt Leinart" },
-          { type: "player", label: "Carson Palmer" },
-          { type: "player", label: "Marcus Allen" }
-        ]
-      },
-      {
-        category: "Ohio State Buckeyes",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Archie Griffin" },
-          { type: "player", label: "Eddie George" },
-          { type: "player", label: "Troy Smith" },
-          { type: "player", label: "Justin Fields" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 14,
-    title: "One Team Forever",
-    level: "Pro",
-    groups: [
-      {
-        category: "NBA lifers",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Kobe Bryant" },
-          { type: "player", label: "Dirk Nowitzki" },
-          { type: "player", label: "Tim Duncan" },
-          { type: "player", label: "John Stockton" }
-        ]
-      },
-      {
-        category: "NFL lifers",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Walter Payton" },
-          { type: "player", label: "Barry Sanders" },
-          { type: "player", label: "Jim Brown" },
-          { type: "player", label: "Dan Marino" }
-        ]
-      },
-      {
-        category: "MLB lifers",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Cal Ripken Jr." },
-          { type: "player", label: "Derek Jeter" },
-          { type: "player", label: "Tony Gwynn" },
-          { type: "player", label: "Chipper Jones" }
-        ]
-      },
-      {
-        category: "NHL lifers",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Steve Yzerman" },
-          { type: "player", label: "Joe Sakic" },
-          { type: "player", label: "Henrik Sedin" },
-          { type: "player", label: "Daniel Alfredsson" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 15,
+    id: 11,
     title: "On the Links",
     level: "All-Pro",
     groups: [
@@ -728,151 +536,55 @@ const PUZZLES = [
   },
 
   {
-    id: 16,
-    title: "Heisman Through the Years",
-    level: "Rookie",
+    id: 12,
+    title: "Trophy Cabinet",
+    level: "All-Pro",
     groups: [
       {
-        category: "'90s winners",
+        category: "Heisman Trophy",
         difficulty: 0,
         items: [
-          { type: "player", label: "Charlie Ward" },
-          { type: "player", label: "Eddie George" },
-          { type: "player", label: "Charles Woodson" },
-          { type: "player", label: "Ricky Williams" }
+          { type: "other",  label: "Stiff-arm pose" },
+          { type: "other",  label: "John Heisman" },
+          { type: "player", label: "Travis Hunter (2024)" },
+          { type: "other",  label: "Downtown Athletic Club" }
         ]
       },
       {
-        category: "2000s winners",
+        category: "Cy Young Award",
         difficulty: 1,
         items: [
-          { type: "player", label: "Carson Palmer" },
-          { type: "player", label: "Reggie Bush" },
-          { type: "player", label: "Tim Tebow" },
-          { type: "player", label: "Sam Bradford" }
+          { type: "other",  label: "511 wins" },
+          { type: "player", label: "Tarik Skubal (AL 2024)" },
+          { type: "player", label: "Chris Sale (NL 2024)" },
+          { type: "other",  label: "Pitching Triple Crown" }
         ]
       },
       {
-        category: "2010s winners",
+        category: "Stanley Cup",
         difficulty: 2,
         items: [
-          { type: "player", label: "Cam Newton" },
-          { type: "player", label: "Robert Griffin III" },
-          { type: "player", label: "Johnny Manziel" },
-          { type: "player", label: "Marcus Mariota" }
+          { type: "other", label: "Lord Stanley" },
+          { type: "other", label: "Oldest pro trophy" },
+          { type: "team",  label: "Florida Panthers (2024)" },
+          { type: "other", label: "Engraved names" }
         ]
       },
       {
-        category: "2020s winners",
+        category: "Larry O'Brien Trophy",
         difficulty: 3,
         items: [
-          { type: "player", label: "Caleb Williams" },
-          { type: "player", label: "Jayden Daniels" },
-          { type: "player", label: "Travis Hunter" },
-          { type: "player", label: "Fernando Mendoza" }
+          { type: "other", label: "NBA Finals" },
+          { type: "other", label: "Former commissioner" },
+          { type: "team",  label: "Celtics (2024)" },
+          { type: "other", label: "Gold basketball" }
         ]
       }
     ]
   },
 
   {
-    id: 17,
-    title: "Frozen Royalty",
-    level: "Pro",
-    groups: [
-      {
-        category: "Canadiens legends",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Maurice Richard" },
-          { type: "player", label: "Jean Béliveau" },
-          { type: "player", label: "Guy Lafleur" },
-          { type: "player", label: "Patrick Roy" }
-        ]
-      },
-      {
-        category: "Red Wings legends",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Gordie Howe" },
-          { type: "player", label: "Steve Yzerman" },
-          { type: "player", label: "Nicklas Lidstrom" },
-          { type: "player", label: "Pavel Datsyuk" }
-        ]
-      },
-      {
-        category: "Bruins legends",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Bobby Orr" },
-          { type: "player", label: "Ray Bourque" },
-          { type: "player", label: "Cam Neely" },
-          { type: "player", label: "Phil Esposito" }
-        ]
-      },
-      {
-        category: "Maple Leafs legends",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Mats Sundin" },
-          { type: "player", label: "Doug Gilmour" },
-          { type: "player", label: "Tim Horton" },
-          { type: "player", label: "Darryl Sittler" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 18,
-    title: "Dynasties",
-    level: "Rookie",
-    groups: [
-      {
-        category: "'60s Celtics",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Bill Russell" },
-          { type: "player", label: "Bob Cousy" },
-          { type: "player", label: "John Havlicek" },
-          { type: "player", label: "Sam Jones" }
-        ]
-      },
-      {
-        category: "Showtime Lakers",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Magic Johnson" },
-          { type: "player", label: "Kareem" },
-          { type: "player", label: "James Worthy" },
-          { type: "player", label: "Byron Scott" }
-        ]
-      },
-      {
-        category: "'90s Bulls",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Michael Jordan" },
-          { type: "player", label: "Scottie Pippen" },
-          { type: "player", label: "Dennis Rodman" },
-          { type: "player", label: "Steve Kerr" }
-        ]
-      },
-      {
-        category: "Warriors dynasty",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Steph Curry" },
-          { type: "player", label: "Klay Thompson" },
-          { type: "player", label: "Draymond Green" },
-          { type: "player", label: "Kevin Durant" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 19,
+    id: 13,
     title: "Franchise DNA",
     level: "All-Pro",
     groups: [
@@ -920,7 +632,7 @@ const PUZZLES = [
   },
 
   {
-    id: 20,
+    id: 14,
     title: "Elite Stats Clubs",
     level: "Pro",
     groups: [
@@ -968,7 +680,7 @@ const PUZZLES = [
   },
 
   {
-    id: 21,
+    id: 15,
     title: "Word Players",
     level: "MVP",
     groups: [
@@ -1016,7 +728,7 @@ const PUZZLES = [
   },
 
   {
-    id: 22,
+    id: 16,
     title: "Behind the Mic",
     level: "All-Pro",
     groups: [
@@ -1064,103 +776,103 @@ const PUZZLES = [
   },
 
   {
-    id: 23,
-    title: "Most Valuable",
-    level: "Pro",
+    id: 17,
+    title: "Stadium Songs",
+    level: "All-Pro",
     groups: [
       {
-        category: "Recent NBA MVPs",
+        category: "“Sweet Caroline”",
         difficulty: 0,
         items: [
-          { type: "player", label: "Shai Gilgeous-Alexander" },
-          { type: "player", label: "Nikola Jokić" },
-          { type: "player", label: "Giannis" },
-          { type: "player", label: "Joel Embiid" }
+          { type: "other",   label: "Neil Diamond" },
+          { type: "team",    label: "Red Sox" },
+          { type: "stadium", label: "Fenway Park" },
+          { type: "other",   label: "8th inning" }
         ]
       },
       {
-        category: "Recent NFL MVPs",
+        category: "“Take Me Out to the Ballgame”",
         difficulty: 1,
         items: [
-          { type: "player", label: "Patrick Mahomes" },
-          { type: "player", label: "Matthew Stafford" },
-          { type: "player", label: "Lamar Jackson" },
-          { type: "player", label: "Josh Allen" }
+          { type: "other",   label: "7th inning stretch" },
+          { type: "other",   label: "Harry Caray" },
+          { type: "stadium", label: "Wrigley Field" },
+          { type: "other",   label: "Cracker Jack" }
         ]
       },
       {
-        category: "Recent MLB MVPs",
+        category: "“Centerfield”",
         difficulty: 2,
         items: [
-          { type: "player", label: "Aaron Judge" },
-          { type: "player", label: "Shohei Ohtani" },
-          { type: "player", label: "Bryce Harper" },
-          { type: "player", label: "Ronald Acuña Jr." }
+          { type: "other", label: "John Fogerty" },
+          { type: "other", label: "“Put me in Coach”" },
+          { type: "other", label: "1985 anthem" },
+          { type: "other", label: "Outfield position" }
         ]
       },
       {
-        category: "Recent Hart winners",
+        category: "“We Will Rock You”",
         difficulty: 3,
         items: [
-          { type: "player", label: "Connor Hellebuyck" },
-          { type: "player", label: "Connor McDavid" },
-          { type: "player", label: "Nikita Kucherov" },
-          { type: "player", label: "Nathan MacKinnon" }
+          { type: "other", label: "Queen" },
+          { type: "other", label: "Stomp-stomp-clap" },
+          { type: "other", label: "Stadium intro" },
+          { type: "other", label: "Freddie Mercury" }
         ]
       }
     ]
   },
 
   {
-    id: 24,
-    title: "Record Books",
-    level: "Rookie",
+    id: 18,
+    title: "Sports Compounds",
+    level: "MVP",
     groups: [
       {
-        category: "Career home run kings",
+        category: "___ DAY",
         difficulty: 0,
         items: [
-          { type: "player", label: "Hank Aaron" },
-          { type: "player", label: "Barry Bonds" },
-          { type: "player", label: "Babe Ruth" },
-          { type: "player", label: "Albert Pujols" }
+          { type: "saying", label: "Game" },
+          { type: "saying", label: "Opening" },
+          { type: "saying", label: "Draft" },
+          { type: "saying", label: "Pro" }
         ]
       },
       {
-        category: "NBA all-time scorers",
+        category: "HOT ___",
         difficulty: 1,
         items: [
-          { type: "player", label: "LeBron James" },
-          { type: "player", label: "Kareem" },
-          { type: "player", label: "Karl Malone" },
-          { type: "player", label: "Kobe Bryant" }
+          { type: "saying", label: "Streak" },
+          { type: "saying", label: "Hand" },
+          { type: "saying", label: "Take" },
+          { type: "saying", label: "Stove" }
         ]
       },
       {
-        category: "NHL goal leaders",
+        category: "HOME ___",
         difficulty: 2,
         items: [
-          { type: "player", label: "Wayne Gretzky" },
-          { type: "player", label: "Alex Ovechkin" },
-          { type: "player", label: "Gordie Howe" },
-          { type: "player", label: "Jaromir Jagr" }
+          { type: "saying", label: "Run" },
+          { type: "saying", label: "Plate" },
+          { type: "saying", label: "Court" },
+          { type: "saying", label: "Stretch" }
         ]
       },
       {
-        category: "NFL passing yards",
+        category: "DEAD ___",
         difficulty: 3,
         items: [
-          { type: "player", label: "Tom Brady" },
-          { type: "player", label: "Drew Brees" },
-          { type: "player", label: "Peyton Manning" },
-          { type: "player", label: "Brett Favre" }
+          { type: "saying", label: "Heat" },
+          { type: "saying", label: "Lock" },
+          { type: "saying", label: "Money" },
+          { type: "saying", label: "Pool" }
         ]
       }
     ]
   },
 
   {
-    id: 25,
+    id: 19,
     title: "Sports Idioms",
     level: "MVP",
     groups: [
@@ -1208,103 +920,7 @@ const PUZZLES = [
   },
 
   {
-    id: 26,
-    title: "Aces",
-    level: "Pro",
-    groups: [
-      {
-        category: "'60s/'70s aces",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Bob Gibson" },
-          { type: "player", label: "Sandy Koufax" },
-          { type: "player", label: "Steve Carlton" },
-          { type: "player", label: "Nolan Ryan" }
-        ]
-      },
-      {
-        category: "'80s/'90s aces",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Roger Clemens" },
-          { type: "player", label: "Greg Maddux" },
-          { type: "player", label: "Randy Johnson" },
-          { type: "player", label: "Pedro Martinez" }
-        ]
-      },
-      {
-        category: "2000s/'10s aces",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Justin Verlander" },
-          { type: "player", label: "Clayton Kershaw" },
-          { type: "player", label: "Max Scherzer" },
-          { type: "player", label: "Felix Hernandez" }
-        ]
-      },
-      {
-        category: "Today's aces",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Tarik Skubal" },
-          { type: "player", label: "Paul Skenes" },
-          { type: "player", label: "Chris Sale" },
-          { type: "player", label: "Zack Wheeler" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 27,
-    title: "Skill Players",
-    level: "Rookie",
-    groups: [
-      {
-        category: "Wide receivers",
-        difficulty: 0,
-        items: [
-          { type: "player", label: "Jerry Rice" },
-          { type: "player", label: "Randy Moss" },
-          { type: "player", label: "Calvin Johnson" },
-          { type: "player", label: "Larry Fitzgerald" }
-        ]
-      },
-      {
-        category: "Running backs",
-        difficulty: 1,
-        items: [
-          { type: "player", label: "Walter Payton" },
-          { type: "player", label: "Barry Sanders" },
-          { type: "player", label: "Emmitt Smith" },
-          { type: "player", label: "Adrian Peterson" }
-        ]
-      },
-      {
-        category: "Tight ends",
-        difficulty: 2,
-        items: [
-          { type: "player", label: "Tony Gonzalez" },
-          { type: "player", label: "Rob Gronkowski" },
-          { type: "player", label: "Travis Kelce" },
-          { type: "player", label: "Antonio Gates" }
-        ]
-      },
-      {
-        category: "Defensive backs",
-        difficulty: 3,
-        items: [
-          { type: "player", label: "Deion Sanders" },
-          { type: "player", label: "Ed Reed" },
-          { type: "player", label: "Ronnie Lott" },
-          { type: "player", label: "Charles Woodson" }
-        ]
-      }
-    ]
-  },
-
-  {
-    id: 28,
+    id: 20,
     title: "GOAT Code",
     level: "Pro",
     groups: [
@@ -1352,7 +968,7 @@ const PUZZLES = [
   },
 
   {
-    id: 29,
+    id: 21,
     title: "Family Name",
     level: "All-Pro",
     groups: [
@@ -1400,7 +1016,7 @@ const PUZZLES = [
   },
 
   {
-    id: 30,
+    id: 22,
     title: "The Improbable",
     level: "MVP",
     groups: [
@@ -1448,7 +1064,7 @@ const PUZZLES = [
   },
 
   {
-    id: 31,
+    id: 23,
     title: "Iron Streaks",
     level: "MVP",
     groups: [
@@ -1496,7 +1112,7 @@ const PUZZLES = [
   },
 
   {
-    id: 32,
+    id: 24,
     title: "Famous Last Stands",
     level: "MVP",
     groups: [
@@ -1544,7 +1160,7 @@ const PUZZLES = [
   },
 
   {
-    id: 33,
+    id: 25,
     title: "What Follows?",
     level: "MVP",
     groups: [
@@ -1592,7 +1208,7 @@ const PUZZLES = [
   },
 
   {
-    id: 34,
+    id: 26,
     title: "Prefix Power",
     level: "MVP",
     groups: [
